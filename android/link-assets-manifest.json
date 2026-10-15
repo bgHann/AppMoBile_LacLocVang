@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/SVN-Cookies.ttf",
+      "sha1": "e979e6a9e97d486170968a3600ffa942c14b747f"
+    },
+    {
+      "path": "src/assets/fonts/SVN-Gotham.ttf",
+      "sha1": "4f427ca99a6b00287c5ad0efb8a58c23e51ca3ac"
+    }
+  ]
+}
