@@ -1,45 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import OnbroardScreen from './src/screens/onbroard/OnbroardScreen';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import BanketScreen from './src/screens/banket/BanketScreen';
+import KhoLocScreen from './src/screens/kholoc/KhoLocScreen';
+import TrangLacScreen from './src/screens/tranglac/TrangLacScreen';
+const Stack = createNativeStackNavigator();
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="OnbroardScreen"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="OnbroardScreen" component={OnbroardScreen} />
+        <Stack.Screen name="BanketScreen" component={BanketScreen} />
+        <Stack.Screen name="KhoLocScreen" component={KhoLocScreen} />
+        <Stack.Screen name="TrangLacScreen" component={TrangLacScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
